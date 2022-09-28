@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\DB;
 use App\Core\Application\Service\CreateTask\CreateTaskRequest;
 use App\Core\Application\Service\CreateTask\CreateTaskService;
 
-class UserController extends Controller
+class TaskController extends Controller
 {
 
     /**
@@ -23,8 +23,8 @@ class UserController extends Controller
             $request->input('date_time'),
             $request->input('reminder')
         );
-        $response = $service->execute($input);
-        return $this->successWithData($response);
+        $service->execute($input);
+        return $this->success();
     }
 
 }
