@@ -16,6 +16,7 @@ Route::middleware(['iam'])->group(
             return response()->json([
                 "success" => true
             ]);
+            Route::post('/create_task', [TaskController::class, 'createTask']);
         });
     }
 );
